@@ -21,7 +21,7 @@ Here are some of the projects I've worked on:
    - Applied K-Means clustering to segment customers based on their purchasing behavior.
    - Generated insights to inform marketing strategies and personalized customer engagement.
 
-**Movie Reviews Sentiment Analysis Using Naive Bayes, SVM, Word2Vec,and [Huggingface](https://huggingface.co/SamLowe/roberta-base-go_emotions)** [[Click Here]](https://github.com/subhanshusingh2023/data_science_projects/tree/main/movie_sentiment_analysiss)
+**Movie Reviews Sentiment Analysis Using Naive Bayes, SVM, Word2Vec,and [Huggingface](https://huggingface.co/SamLowe/roberta-base-go_emotions)** [[Click Here]](https://github.com/subhanshusingh2023/data_science_projects/tree/main/movie_sentiment_analysis)
    - Perform sentiment analysis on movie reviews using Hugging Face models and Gradio interface.
    - Choose between pre-trained models or your own for accurate sentiment classification.
    - Deploy easily and interactively analyze movie sentiments with this user-friendly tool.
