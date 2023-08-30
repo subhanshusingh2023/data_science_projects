@@ -10,3 +10,4 @@ gensim
 joblib
 scipy
 transformers
+torch
