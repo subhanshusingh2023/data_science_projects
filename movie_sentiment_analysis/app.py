@@ -5,12 +5,15 @@ from gensim.models import Word2Vec
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
+from transformers import pipeline
 
 # Load the pre-trained Word2Vec model
 w2v_model = Word2Vec.load("word2vec.model")
 
 # Load the pre-trained SVM model
 svm_classifier = joblib.load("best_model.joblib")
+
+hf_sentiment = pipeline("sentiment-analysis", model="SamLowe/roberta-base-go_emotions")
 
 def preprocess_text(text):
     text = text.lower()
@@ -32,11 +35,35 @@ def predict_sentiment(text):
     prediction = svm_classifier.predict([text_vector])[0]
     return "Positive" if prediction == "positive" else "Negative"
 
-# Create the Gradio interface
-gr.Interface(
-    fn=predict_sentiment,
-    inputs="text",
+# Predict using the Hugging Face model
+def predict_hf_model(text):
+    result = hf_sentiment(text)[0]
+    label = result["label"]
+    score = result["score"]
+    sentiment = "negative" if label == "LABEL_1" else "positive"
+    return f"Predicted sentiment: {sentiment} (Confidence: {score:.2f})"
+
+def analyze_text(choice, text):
+    if choice == "Hugging Face Model":
+        return predict_hf_model(text)
+    if choice == "Best Model":
+        return predict_sentiment(text)
+    else:
+        return "Please select a model."
+
+# Gradio interface
+iface = gr.Interface(
+    fn=analyze_text,
+    inputs=[
+        gr.inputs.Radio(["Best Model", "Hugging Face Model"], label="Choose Model"),
+        gr.inputs.Textbox(lines=5, label="Input Text")
+    ],
     outputs="text",
-    title="Movie Sentiment Analysis",
-    description="Predicts the sentiment of a movie review as positive or negative."
-).launch(share=True)
+    live=True,
+    title="Sentiment Analysis",
+    description="Predict sentiment of a text using different models."
+)
+
+
+
+iface.launch()

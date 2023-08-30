@@ -1,6 +1,6 @@
 # Sentiment Analysis Project
 
-![Sentiment Analysis](sentiment_analysis.png)
+![Sentiment Analysis](sentiment.png)
 
 This repository contains the code and resources for a sentiment analysis project. The project involves building and deploying a machine learning model to predict the sentiment (positive or negative) of movie reviews.
 
@@ -11,12 +11,13 @@ This repository contains the code and resources for a sentiment analysis project
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
+- [Gradio Interface](#Gradio-Interface)
 - [Deployment](#deployment)
 - [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
-Sentiment analysis, also known as opinion mining, is the process of determining the sentiment expressed in a piece of text. In this project, we focus on sentiment analysis of movie reviews using machine learning techniques. We explore various models, including Naive Bayes, SVM, and Word2Vec, to predict whether a given review has a positive or negative sentiment.
+Sentiment analysis, also known as opinion mining, is the process of determining the sentiment expressed in a piece of text. In this project, we focus on sentiment analysis of movie reviews using machine learning techniques. We explore various models, including Naive Bayes, SVM, Word2Vec,and [Huggingface](https://huggingface.co/SamLowe/roberta-base-go_emotions), to predict whether a given review has a positive or negative sentiment.
 
 ## Project Overview
 
@@ -50,7 +51,7 @@ The project is organized as follows:
 
 - `IMDB_Dataset.csv`: is the dataset.
 - `best_model.joblib`: is the model with best prediction.
-- `Sentiment Analysis of Movie Reviews`: Jupyter notebook for data   preprocessing, model training, and analysis.
+- `Sentiment Analysis of Movie Reviews`: Jupyter notebook for data  preprocessing, model training, and analysis.
 - `app.py`: Gradio application script for sentiment prediction.
 - `requirements.txt`: List of required Python packages.
 - `README.md`: Project overview and instructions.
@@ -64,9 +65,21 @@ gradio run app.py
 
 This will start the web interface for sentiment prediction.
 
+# Gradio Interface
+The Gradio interface provides an interactive way to predict sentiment using different models:
+
+Best Model: Predicts sentiment using the best-performing model trained in this project.
+Hugging Face Model: Predicts sentiment using the Hugging Face transformer model.
+
 ## Deployment
 
 The Gradio application can be deployed using platforms like [Heroku](https://www.heroku.com/), [Vercel](https://vercel.com/), or [Google Cloud Platform](https://cloud.google.com/). Refer to the deployment documentation of the chosen platform for detailed instructions.
+
+## Notes
+Make sure you have the necessary dataset, models, and libraries installed before running the code.
+For more information about the Hugging Face sentiment analysis model, visit Hugging Face Transformers.
+Feel free to modify the code and interface to suit your preferences and needs.
+Happy coding!
 
 ## Acknowledgments
 

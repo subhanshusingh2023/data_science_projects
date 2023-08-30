@@ -1,0 +1,12 @@
+gradio
+numpy
+pandas
+scikit-learn
+nltk
+seaborn
+matplotlib
+wordcloud
+gensim
+joblib
+scipy
+transformers
