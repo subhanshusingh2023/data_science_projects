@@ -13,14 +13,19 @@ Welcome to my GitHub profile! I'm a passionate Data Scientist with a strong back
 
 Here are some of the projects I've worked on:
 
-1. **Handwritten Digits Classifier**
+**Handwritten Digits Classifier**
    - Implemented a deep neural network to classify handwritten digits from the MNIST dataset.
    - Achieved an accuracy of over 98% using techniques such as K-Nearest Neighbors and multi-layer perceptrons (MLPs).
-
-2. **Customer Segmentation using Clustering**
+ 
+**Customer Segmentation using Clustering**
    - Applied K-Means clustering to segment customers based on their purchasing behavior.
    - Generated insights to inform marketing strategies and personalized customer engagement.
 
+**Movie Reviews Sentiment Analysis Using Naive Bayes, SVM, Word2Vec,and [Huggingface](https://huggingface.co/SamLowe/roberta-base-go_emotions)** [[Click Here]](https://github.com/subhanshusingh2023/data_science_projects/movie_sentiment_analysis)
+   - Perform sentiment analysis on movie reviews using Hugging Face models and Gradio interface.
+   - Choose between pre-trained models or your own for accurate sentiment classification.
+   - Deploy easily and interactively analyze movie sentiments with this user-friendly tool.
+     
 ## Skills
 
 - Python
@@ -30,6 +35,7 @@ Here are some of the projects I've worked on:
 - Neural Networks
 - Machine Learning
 - Data Visualization
+- Natural Language Processing (NLP)
 
 ## Let's Connect
 
