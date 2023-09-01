@@ -13,6 +13,16 @@ Welcome to my GitHub profile! I'm a passionate Data Scientist with a strong back
 
 Here are some of the projects I've worked on:
 
+**PredictX: A Versatile Machine Learning Prediction App** [Click Here To Try](https://predictit.streamlit.app/)
+    - PredictX is a powerful machine learning prediction app that enables users to make predictions using various machine learning models effortlessly.
+    - Whether you're a data enthusiast or a business professional, PredictX offers an intuitive interface for making predictions on your datasets.
+    - With PredictX, you can upload your dataset, select features, and choose a target variable to predict, all in one streamlined application.
+
+**Movie Reviews Sentiment Analysis Using Naive Bayes, SVM, Word2Vec,and [Huggingface](https://huggingface.co/SamLowe/roberta-base-go_emotions)** [[Click Here]](https://github.com/subhanshusingh2023/data_science_projects/tree/main/movie_sentiment_analysis)
+   - Perform sentiment analysis on movie reviews using Hugging Face models and Gradio interface.
+   - Choose between pre-trained models or your own for accurate sentiment classification.
+   - Deploy easily and interactively analyze movie sentiments with this user-friendly tool.
+     
 **Handwritten Digits Classifier**
    - Implemented a deep neural network to classify handwritten digits from the MNIST dataset.
    - Achieved an accuracy of over 98% using techniques such as K-Nearest Neighbors and multi-layer perceptrons (MLPs).
@@ -20,11 +30,6 @@ Here are some of the projects I've worked on:
 **Customer Segmentation using Clustering**
    - Applied K-Means clustering to segment customers based on their purchasing behavior.
    - Generated insights to inform marketing strategies and personalized customer engagement.
-
-**Movie Reviews Sentiment Analysis Using Naive Bayes, SVM, Word2Vec,and [Huggingface](https://huggingface.co/SamLowe/roberta-base-go_emotions)** [[Click Here]](https://github.com/subhanshusingh2023/data_science_projects/tree/main/movie_sentiment_analysis)
-   - Perform sentiment analysis on movie reviews using Hugging Face models and Gradio interface.
-   - Choose between pre-trained models or your own for accurate sentiment classification.
-   - Deploy easily and interactively analyze movie sentiments with this user-friendly tool.
      
 ## Skills
 
