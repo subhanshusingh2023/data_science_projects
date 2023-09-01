@@ -15,9 +15,9 @@ Here are some of the projects I've worked on:
 
 **PredictX: A Versatile Machine Learning Prediction App** [Click Here To Try](https://predictit.streamlit.app/)
 
-    - PredictX is a powerful machine learning prediction app that enables users to make predictions using various machine learning models effortlessly.
-    - Whether you're a data enthusiast or a business professional, PredictX offers an intuitive interface for making predictions on your datasets.
-    - With PredictX, you can upload your dataset, select features, and choose a target variable to predict, all in one streamlined application.
+    -  PredictX is a powerful machine learning prediction app that enables users to make predictions using various machine learning models effortlessly.
+    -  Whether you're a data enthusiast or a business professional, PredictX offers an intuitive interface for making predictions on your datasets.
+    -  With PredictX, you can upload your dataset, select features, and choose a target variable to predict, all in one streamlined application.
 
 **Movie Reviews Sentiment Analysis Using Naive Bayes, SVM, Word2Vec,and [Huggingface](https://huggingface.co/SamLowe/roberta-base-go_emotions)** [[Click Here]](https://github.com/subhanshusingh2023/data_science_projects/tree/main/movie_sentiment_analysis)
    - Perform sentiment analysis on movie reviews using Hugging Face models and Gradio interface.
