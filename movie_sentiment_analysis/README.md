@@ -35,8 +35,8 @@ The project involves the following steps:
 To run and explore the project, follow these steps:
 
 1. Clone the repository:
-git clone https://github.com/subhanshusingh2023/data_science_projects/movie_sentiment_analysis.git
-cd sentiment-analysis-project
+git clone https://github.com/subhanshusingh2023/data_science_projects.git
+cd movie_sentiment_analysis
 
 
 2. Install the required dependencies:
