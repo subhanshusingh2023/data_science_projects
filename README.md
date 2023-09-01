@@ -14,6 +14,7 @@ Welcome to my GitHub profile! I'm a passionate Data Scientist with a strong back
 Here are some of the projects I've worked on:
 
 **PredictX: A Versatile Machine Learning Prediction App** [Click Here To Try](https://predictit.streamlit.app/)
+
     - PredictX is a powerful machine learning prediction app that enables users to make predictions using various machine learning models effortlessly.
     - Whether you're a data enthusiast or a business professional, PredictX offers an intuitive interface for making predictions on your datasets.
     - With PredictX, you can upload your dataset, select features, and choose a target variable to predict, all in one streamlined application.
