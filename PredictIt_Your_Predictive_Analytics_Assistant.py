@@ -12,6 +12,7 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.svm import SVR
 from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
+import joblib
 
 # Define a function to perform regression with the selected model
 def perform_regression(model, file, selected_features, selected_target):
@@ -74,6 +75,7 @@ def perform_regression(model, file, selected_features, selected_target):
 
             # Make predictions
             y_pred = model_instance.predict(X_test)
+            joblib.dump(model_instance, 'trained_model_regression.joblib')
 
             # Calculate Mean Squared Error (MSE)
             mse = mean_squared_error(y_test, y_pred)
@@ -95,6 +97,38 @@ def perform_regression(model, file, selected_features, selected_target):
 
     except Exception as e:
         return f"Error: {str(e)}"
+# Define a function to make predictions on unseen data and output the CSV file
+def make_predictions_on_unseen_data(model, file, selected_features):
+    try:
+        # Check if the uploaded file is empty
+        if file is None:
+            return "Error: Empty CSV file. Please upload a CSV file with data."
+
+        # Read the CSV file from the file object
+        data_unseen = pd.read_csv(file)
+       
+
+        # Check if the DataFrame is empty
+        if data_unseen.empty:
+            return "Error: The CSV file is empty. Please upload a CSV file with data."
+
+        # Check if the selected features are valid
+        if not all(feature in data_unseen.columns for feature in selected_features):
+            return "Error: One or more selected features not found in the CSV file."
+
+        # Standardize features
+        scaler = StandardScaler()
+        X_unseen = data_unseen[selected_features]
+        X_unseen = scaler.fit_transform(X_unseen)     
+        y_pred = model.predict(X_unseen)
+
+        # Add predictions as a new column in the DataFrame
+        data_unseen['Predicted_Labels'] = y_pred
+        output_filename = "predictions_on_unseen_data.csv"
+        out_file = data_unseen.to_csv(data_unseen.to_csv(output_filename, index=False))
+        return output_filename,out_file
+    except Exception as e:
+       return f"Error: {str(e)}"
 
 # Create a Streamlit app
 st.title("PredictIt - Your Predictive Analytics Assistant")
@@ -144,4 +178,39 @@ if uploaded_file is not None:
     if st.button("Predict"):
         metrics = perform_regression(selected_model, uploaded_file, selected_features, target_column)
         st.write(metrics)
+
+
+# Section for making predictions on unseen data
+st.header("Make Predictions on Unseen Data")
+st.markdown("""
+### Same Format
+Please make sure the format of unseen data is same and has the same features
+""")
+
+# Upload a CSV file for unseen data
+unseen_data_file = st.file_uploader("Upload Unseen Data (without labels)", type=["csv"])
+
+if unseen_data_file is not None:
+    st.write("Uploaded Unseen Data:")
+    df_unseen = pd.read_csv(unseen_data_file)
+    unseen_data_file.seek(0)
+    st.write(df_unseen)
+
+    # Button to make predictions on unseen data
+    if st.button("Make Predictions on Unseen Data"):
+        output_filename,out_file = make_predictions_on_unseen_data(joblib.load('trained_model_regression.joblib'), unseen_data_file, selected_features)
+       
+
+
+        if output_filename:
+            st.success(f"Predictions saved to '{output_filename}'")
+
+            # Provide a download link for the user to download the file
+            st.download_button(
+                label="Download Predictions",
+                data=out_file,
+                file_name=output_filename,
+                key=None,
+                help="Click to download the predictions CSV file",
+            )
     
