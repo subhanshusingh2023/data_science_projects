@@ -21,7 +21,6 @@ Here are some of the projects I've worked on:
 
 [**PredictIt: A Versatile Machine Learning Prediction App** (Regression)](https://predictit.streamlit.app/)
 - PredictIt is a powerful machine learning prediction app that enables users to make predictions using various machine learning models effortlessly.
-- Enables users to make predictions effortlessly using various ML models.
 - Streamlined interface for dataset upload, feature selection, and target variable prediction.
 - Use the trained model on unseen data and download the data with predictions.
 
