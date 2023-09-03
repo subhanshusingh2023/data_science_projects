@@ -140,8 +140,6 @@ def make_predictions_on_unseen_data(model, file, selected_features):
 # Create a Streamlit app
 st.title("ClassifyIt - Your Classification Assistant")
 
-st.title("ClassifyIt - Your Classification Assistant")
-
 st.markdown("""
 Welcome to ClassifyIt, your all-in-one classification assistant! ClassifyIt allows you to perform classification tasks and analyze the results using various machine learning models.
 """)
