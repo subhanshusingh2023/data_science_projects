@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.feature_selection import SelectKBest, f_classif
 import matplotlib.pyplot as plt
@@ -11,19 +11,17 @@ import streamlit as st
 loaded_model = joblib.load("customer_churn_nn.joblib")
 
 grid = {
-     "Random Forest": {"n_estimators": [10, 50, 100, 200], "max_depth": [None, 10, 20, 30]},
-}
+        "Random Forest": {"n_estimators": [10, 50, 100, 200], "max_depth": [None, 10, 20, 30]},
+        }
 
 def perform_classification(X_train,X_test,y_train,y_test):
 
-    
     model_instance = loaded_model
     grid_search = GridSearchCV(model_instance, grid["Random Forest"], cv=5)
     grid_search.fit(X_train, y_train)
     best_params = grid_search.best_params_
     model_instance.set_params(**best_params)
     model_instance.fit(X_train, y_train)
-
     
     # Make predictions
     y_pred = model_instance.predict(X_test)
@@ -34,7 +32,7 @@ def perform_classification(X_train,X_test,y_train,y_test):
     # Generate classification report
     report = classification_report(y_test, y_pred,output_dict=True)
 
-        # Create a confusion matrix
+     # Create a confusion matrix
     cm = confusion_matrix(y_test, y_pred)
 
     parameters =  [report, cm]
@@ -47,6 +45,7 @@ def feature_selection(X,y,k="all"):
      # Select features and target column
         # Split the dataset into training and testing sets
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    
         
         # Initialize StandardScaler
         scaler = StandardScaler()
@@ -67,7 +66,7 @@ def feature_selection(X,y,k="all"):
         return X_train_selected, X_test_selected, y_train, y_test
     
 # Create a Streamlit title
-st.title("Customer Churn Classification")
+st.title("Customer Churn Classification [Random Forest]")
 
 # Add instructions for the user
 st.write("Upload a CSV file containing your data. Select features and the target column for classification, then click 'Classify'.")
