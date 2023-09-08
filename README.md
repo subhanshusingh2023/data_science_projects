@@ -13,7 +13,13 @@ Welcome to my GitHub profile! I'm a passionate Data Scientist with a strong back
 
 Here are some of the projects I've worked on:
 
-[**CLASSIFYIT: A VERSATILE MACHINE LEARNING PREDICTION APP** (Classification)](https://classifyit.streamlit.app/)
+[**Customer Churn Prediction Project**](https://churnanalysis.streamlit.app/)
+- Churn Prediction: This project accurately predicts customer churn, providing businesses with valuable insights into customer retention.
+- Multiple Models: The project supports various machine learning models, allowing businesses to choose the best-fit model for their data.
+- Data Preprocessing: The project includes data preprocessing steps to ensure the data is ready for model training.
+- Visualization: Visualize the project's results and gain a deeper understanding of customer churn patterns.
+
+[**ClassifyIt: A Versatile Machine Learning Prediction App** (Classification)](https://classifyit.streamlit.app/)
 - Developed CLASSIFYIT, a versatile machine learning prediction app.
 - Enables users to make predictions effortlessly using various ML models.
 - Streamlined interface for dataset upload, feature selection, and target variable prediction.
